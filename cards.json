@@ -1,0 +1,521 @@
+[
+    {
+        "title": "dagger",
+        "type": "weapon",
+        "typeDescription": "Simple melee Weapon",
+        "properties": ["finesse", "light", "thrown"],
+        "cost": 2,
+        "weight": 1,
+        "actions": [
+            {
+                "type": "attack",
+                "name": "melee attack",
+                "description": "Choose either strength or dexterity, then use it for your attack and damage",
+                "rolls": [
+                    {
+                        "type": "attack",
+                        "parts": [
+                            {"die": 20},
+                            {"mod": "finesse"},
+                            {"mod": "prof"}
+                        ]
+                    },
+                    {
+                        "type": "damage",
+                        "parts": [
+                            {"die": 4},
+                            {"mod": "finesse"},
+                            { "icon": "piercing" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "attack",
+                "name": "throw",
+                "range": {
+                    "short": 20,
+                    "long": 60
+                },
+                "rolls": [
+                    {
+                        "type": "attack",
+                        "parts": [
+                            {"die": 20},
+                            {"mod": "dex"},
+                            {"mod": "prof"}
+                        ]
+                    },
+                    {
+                        "type": "damage",
+                        "parts": [
+                            {"die": 4},
+                            {"mod": "dex"},
+                            { "icon": "piercing" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "javelin",
+        "type": "weapon",
+        "typeDescription": "Simple melee Weapon",
+        "properties": ["thrown"],
+        "cost": 0.5,
+        "weight": 2,
+        "actions": [
+            {
+                "type": "attack",
+                "name": "melee attack",
+                "rolls": [
+                    {
+                        "type": "attack",
+                        "parts": [
+                            {"die": 20},
+                            {"mod": "str"},
+                            {"mod": "prof"}
+                        ]
+                    },
+                    {
+                        "type": "damage",
+                        "parts": [
+                            {"die": 6},
+                            {"mod": "str"},
+                            { "icon": "piercing" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "attack",
+                "name": "throw",
+                "rolls": [
+                    {
+                        "type": "attack",
+                        "parts": [
+                            {"die": 20},
+                            {"mod": "dex"},
+                            {"mod": "prof"}
+                        ]
+                    },
+                    {
+                        "type": "damage",
+                        "parts": [
+                            {"die": 6},
+                            {"mod": "dex"},
+                            { "icon": "piercing" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "spear",
+        "type": "weapon",
+        "typeDescription": "Simple melee Weapon",
+        "properties": ["versatile", "thrown"],
+        "cost": 0.5,
+        "weight": 2,
+        "actions": [
+            {
+                "type": "attack",
+                "name": "one handed attack",
+                "rolls": [
+                    {
+                        "type": "attack",
+                        "parts": [
+                            {"die": 20},
+                            {"mod": "str"},
+                            {"mod": "prof"}
+                        ]
+                    },
+                    {
+                        "type": "damage",
+                        "parts": [
+                            {"die": 6},
+                            {"mod": "str"},
+                            { "icon": "piercing" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "attack",
+                "name": "two handed attack",
+                "description": "must have two free hands",
+                "rolls": [
+                    {
+                        "type": "attack",
+                        "parts": [
+                            {"die": 20},
+                            {"mod": "str"},
+                            {"mod": "prof"}
+                        ]
+                    },
+                    {
+                        "type": "damage",
+                        "parts": [
+                            {"die": 8},
+                            {"mod": "str"},
+                            { "icon": "piercing" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "attack",
+                "name": "throw",
+                "range": {
+                    "short": 20,
+                    "long": 60
+                },
+                "rolls": [
+                    {
+                        "type": "attack",
+                        "parts": [
+                            {"die": 20},
+                            {"mod": "dex"},
+                            {"mod": "prof"}
+                        ]
+                    },
+                    {
+                        "type": "damage",
+                        "parts": [
+                            {"die": 6},
+                            {"mod": "dex"},
+                            { "icon": "piercing" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "light crossbow",
+        "type": "ranged",
+        "typeDescription": "Simple Ranged Weapon",
+        "properties": ["two-handed", "loading", "ammunition"],
+        "cost": 25,
+        "weight": 5,
+        "actions": [
+            {
+                "type": "attack",
+                "name": "ranged attack",
+                "range": {
+                    "short": 80,
+                    "long": 320
+                },
+                "rolls": [
+                    {
+                        "type": "attack",
+                        "parts": [
+                            {"die": 20},
+                            {"mod": "dex"},
+                            {"mod": "prof"}
+                        ]
+                    },
+                    {
+                        "type": "damage",
+                        "parts": [
+                            {"die": 20},
+                            {"mod": "dex"},
+                            {"icon": "piercing"}
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "shortbow",
+        "type": "ranged",
+        "typeDescription": "Simple Ranged Weapon",
+        "properties": ["two-handed", "ammunition"],
+        "cost": 25,
+        "weight": 2,
+        "actions": [
+            {
+                "type": "attack",
+                "name": "ranged attack",
+                "range": {
+                    "short": 80,
+                    "long": 320
+                },
+                "rolls": [
+                    {
+                        "type": "attack",
+                        "parts": [
+                            {"die": 20},
+                            {"mod": "dex"},
+                            {"mod": "prof"}
+                        ]
+                    },
+                    {
+                        "type": "damage",
+                        "parts": [
+                            {"die": 20},
+                            {"mod": "str"},
+                            {"icon": "piercing"}
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "battleaxe",
+        "type": "weapon",
+        "typeDescription": "Martial Melee Weapon",
+        "properties": ["versatile"],
+        "cost": 10,
+        "weight": 4,
+        "actions": [
+            {
+                "type": "attack",
+                "name": "one handed attack",
+                "rolls": [
+                    {
+                        "type": "attack",
+                        "parts": [
+                            {"die": 20},
+                            {"mod": "str"},
+                            {"mod": "prof"}
+                        ]
+                    },
+                    {
+                        "type": "damage",
+                        "parts": [
+                            {"die": 8},
+                            {"mod": "str"},
+                            {"icon": "slashing"}
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "attack",
+                "name": "two handed attack",
+                "description": "Must have two free hands",
+                "rolls": [
+                    {
+                        "type": "attack",
+                        "parts": [
+                            {"die": 20},
+                            {"mod": "str"},
+                            {"mod": "prof"}
+                        ]
+                    },
+                    {
+                        "type": "damage",
+                        "parts": [
+                            {"die": 10},
+                            {"mod": "str"},
+                            {"icon": "slashing"}
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "greataxe",
+        "type": "weapon",
+        "typeDescription": "Martial Melee Weapon",
+        "description": "A barbaricly large axe delivering wild and often massive damage, though too heavy for some.",
+        "properties": ["heavy", "two-handed"],
+        "cost": 30,
+        "weight": 7,
+        "actions": [
+            {
+                "type": "attack",
+                "name": "heavy two handed attack",
+                "description": "Small or tiny creatures have disadvantage",
+                "rolls": [
+                    {
+                        "type": "attack",
+                        "parts": [
+                            {"die": 20},
+                            {"mod": "str"},
+                            {"mod": "prof"}
+                        ]
+                    },
+                    {
+                        "type": "damage",
+                        "parts": [
+                            {"die": 12},
+                            {"mod": "str"},
+                            {"icon": "slashing"}
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "greatsword",
+        "type": "weapon",
+        "typeDescription": "Martial Melee Weapon",
+        "description": "A fearsome two handed blade delivering consistently massive damage, though too heavy for some.",
+        "properties": ["heavy", "two-handed"],
+        "cost": 50,
+        "weight": 6,
+        "actions": [
+            {
+                "type": "attack",
+                "name": "heavy two handed attack",
+                "description": "Small or tiny creatures have disadvantage",
+                "rolls": [
+                    {
+                        "type": "attack",
+                        "parts": [
+                            {"die": 20},
+                            {"mod": "str"},
+                            {"mod": "prof"}
+                        ]
+                    },
+                    {
+                        "type": "damage",
+                        "parts": [
+                            {"die": 6},
+                            {"die": 6},
+                            {"mod": "str"},
+                            {"icon": "slashing"}
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "longsword",
+        "type": "weapon",
+        "typeDescription": "Martial Melee Weapon",
+        "description": "Old reliable. Sometimes you just need a good sharp sword.",
+        "properties": ["versatile"],
+        "cost": 15,
+        "weight": 3,
+        "actions": [
+            {
+                "type": "attack",
+                "name": "one handed attack",
+                "rolls": [
+                    {
+                        "type": "attack",
+                        "parts": [
+                            {"die": 20},
+                            {"mod": "str"},
+                            {"mod": "prof"}
+                        ]
+                    },
+                    {
+                        "type": "damage",
+                        "parts": [
+                            {"die": 8},
+                            {"mod": "str"},
+                            {"icon": "slashing"}
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "attack",
+                "name": "two handed attack",
+                "rolls": [
+                    {
+                        "type": "attack",
+                        "parts": [
+                            {"die": 20},
+                            {"mod": "str"},
+                            {"mod": "prof"}
+                        ]
+                    },
+                    {
+                        "type": "damage",
+                        "parts": [
+                            {"die": 10},
+                            {"mod": "str"},
+                            {"icon": "slashing"}
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "heavy crossbow",
+        "type": "ranged",
+        "typeDescription": "Martial Ranged Weapon",
+        "properties": ["two-handed", "heavy", "loading", "ammunition"],
+        "cost": 50,
+        "weight": 18,
+        "actions": [
+            {
+                "type": "attack",
+                "name": "ranged attack",
+                "description": "Small or tiny creatures have disadvantage",
+                "range": {
+                    "short": 100,
+                    "long": 400
+                },
+                "rolls": [
+                    {
+                        "type": "attack",
+                        "parts": [
+                            {"die": 20},
+                            {"mod": "dex"},
+                            {"mod": "prof"}
+                        ]
+                    },
+                    {
+                        "type": "damage",
+                        "parts": [
+                            {"die": 10},
+                            {"mod": "dex"},
+                            {"icon": "piercing"}
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "longbow",
+        "type": "ranged",
+        "typeDescription": "Martial Ranged Weapon",
+        "properties": ["two-handed", "heavy", "ammunition"],
+        "cost": 50,
+        "weight": 2,
+        "actions": [
+            {
+                "type": "attack",
+                "name": "ranged attack",
+                "description": "Small or tiny creatures have disadvantage",
+                "range": {
+                    "short": 150,
+                    "long": 600
+                },
+                "rolls": [
+                    {
+                        "type": "attack",
+                        "parts": [
+                            {"die": 20},
+                            {"mod": "dex"},
+                            {"mod": "prof"}
+                        ]
+                    },
+                    {
+                        "type": "damage",
+                        "parts": [
+                            {"die": 8},
+                            {"mod": "dex"},
+                            {"icon": "piercing"}
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

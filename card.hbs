@@ -1,0 +1,50 @@
+<div class="card">
+    <div class="header">
+        <div class="type">
+            <div class="text-icon {{type}}">{{ typeDescription }}</div>
+            {{#each properties}}
+            <div class="text-icon {{this}}"></div>
+            {{/each}}
+        </div>
+        <div class="icon-list">
+            <div class="text-icon action"></div>
+        </div>
+    </div>
+    <div class="title">{{title}}</div>
+    <div class="description">
+        {{description}}
+    </div>
+    <div class="section fill">
+        {{#if actions}}
+        <div class="activity-group">
+            <div class="group-header separator">
+                <div class="group-name heading text-icon action">Actions</div>
+            </div>
+            {{#each actions}}
+            <div class="section">
+                <div class="name text-icon {{this.type}}">{{this.name}}</div>
+                <div class="description">{{#if range}}Range {{range.short}}/{{range.long}}{{#if description}}<br/>{{/if}}{{/if}}{{#if description}}{{description}}{{/if}}</div>
+                {{#each rolls}}
+                <div class="roll" data-roll-type="{{this.type}}">
+                    {{#each parts}}
+                    {{#if this.die}}<div class="die" data-die="d{{this.die}}"></div>{{/if}}
+                    {{#if this.mod}}<div class="mod" data-mod="{{this.mod}}"></div>{{/if}}
+                    {{#if this.icon}}<div class="text-icon {{this.icon}}">{{this.icon}}</div>{{/if}}
+                    {{/each}}
+                </div>
+                {{/each}}
+            </div>
+            {{/each}}
+        </div>
+        {{/if}}
+    </div>
+    <div class="notes">
+        {{#each properties}}
+        <div class="text-icon {{this}}">{{this}}</div>
+        {{/each}}
+    </div>
+    <div class="footer">
+        <div class="text-icon gold">{{cost}}</div>
+        <div class="text-icon weight">{{weight}}</div>
+    </div>
+</div>

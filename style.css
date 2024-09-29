@@ -18,21 +18,17 @@ body {
 
 .print-area {
     width: 297mm;
-    height: 209mm;
+    /* height: 209mm; */
     box-sizing: border-box;
-    padding: 5mm;
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 5mm;
-}
-
-.row {
-    height: auto;
+    padding-left: 5mm;
+    padding-top: 5mm;
+    padding-right: 5mm;
     display: flex;
     flex-direction: row;
-    flex-basis: 100%;
-    gap: 5mm;
+    flex-wrap: wrap;
+    align-items: stretch;
+    row-gap: 10mm;
+    column-gap: 5mm;
 }
 
 .card {
@@ -40,7 +36,7 @@ body {
     /* background-image: url(./card-border.svg); */
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    flex: 1 1 0;
+    flex: 1 0 21%;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -48,6 +44,8 @@ body {
     text-align: left;
     font-size: medium;
     padding: 2mm;
+    box-sizing: border-box;
+    height: calc((210mm - 5mm - 10mm - 5mm) / 2);
 }
 
 div {
@@ -121,10 +119,10 @@ div {
         --icon: url('./icons/sack.svg');
     }
     &.weapon {
-        --icon: url('./icons/sword.svg')
+        --icon: url('./icons/sword.svg');
     }
     &.ranged {
-        --icon: url('./icons/bow-arrow.svg')
+        --icon: url('./icons/bow-arrow.svg');
     }
     &.thrown {
         --icon: url('./icons/boomerang.svg');
@@ -136,16 +134,28 @@ div {
         --icon: url('./icons/reload.svg');
     }
     &.piercing {
-        --icon: url('./icons/arrow-projectile.svg')
+        --icon: url('./icons/arrow-projectile.svg');
     }
     &.ammunition {
-        --icon: url('./icons/ammunition.svg')
+        --icon: url('./icons/ammunition.svg');
     }
     &.two-handed {
-        --icon: url('./icons/hand-clap.svg')
+        --icon: url('./icons/hand-clap.svg');
     }
     &.versatile {
-        --icon: url('./icons/fencing.svg')
+        --icon: url('./icons/rotate.svg');
+    }
+    &.slashing {
+        --icon: url('./icons/knife.svg');
+    }
+    &.heavy {
+        --icon: url('./icons/dumbell.svg');
+    }
+    &.finesse {
+        --icon: url('./icons/fencing.svg');
+    }
+    &.light {
+        --icon: url('./icons/feather.svg');
     }
 }
 .text-icon::after {
@@ -247,9 +257,15 @@ div {
 .mod[data-mod="dex"]::after {
     background-image: url('./icons/gymnastics.svg');
 }
+.mod[data-mod="finesse"]::before {
+    content: '+(STR or DEX)'
+}
+.mod[data-mod="finesse"]::after {
+    background-image: url('./icons/fencing.svg');
+}
 
 .mod[data-mod="prof"]::before {
-    content: '+PROF';
+    content: '+PRO';
     opacity: 0.9;
 }
 .mod[data-mod="prof"]::after {
@@ -276,7 +292,7 @@ div {
         border: 0px;
     }
 
-    .print-area {
-        page-break-after: always;
+    .print-area:nth-child(8n) {
+        break-after: always;
     }
 }
