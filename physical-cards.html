@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="print-area">
+        <div class="row">
+            <div class="card">
+                <div class="header">
+                    <div class="type">
+                        <div class="text-icon weapon">Simple Melee Weapon</div>
+                        <div class="text-icon thrown"></div>
+                    </div>
+                    <div class="icon-list">
+                        <div class="text-icon action"></div>
+                    </div>
+                </div>
+                <div class="title">Javelin</div>
+                <div class="description">
+                    Long and light stab stick. Can be used in hand to hand combat or thrown.<br/>
+                </div>
+                <div class="section fill">
+                    <div class="activity-group">
+                        <div class="group-header separator">
+                            <div class="group-name heading text-icon action">Actions</div>
+                        </div>
+                        <div class="section">
+                            <div class="name text-icon attack">Melee Attack</div>
+                            <div class="description"></div>
+                            <div class="roll" data-roll-type="attack">
+                                <div class="die" data-die="d20"></div>
+                                <div class="mod" data-mod="str"></div>
+                                <div class="mod" data-mod="prof"></div>
+                            </div>
+                            <div class="roll" data-roll-type="damage">
+                                <div class="die" data-die="d6"></div>
+                                <div class="mod" data-mod="str"></div>
+                                <div class="text-icon piercing">Piercing</div>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <div class="name text-icon attack">throw</div>
+                            <div class="description">Range 30/120</div>
+                            <div class="roll" data-roll-type="attack">
+                                <div class="die" data-die="d20"></div>
+                                <div class="mod" data-mod="dex"></div>
+                                <div class="mod" data-mod="prof"></div>
+                            </div>
+                            <div class="roll" data-roll-type="damage">
+                                <div class="die" data-die="d6"></div>
+                                <div class="mod" data-mod="dex"></div>
+                                <div class="text-icon piercing">Piercinf</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="notes">
+                    <div class="text-icon thrown">thrown</div>
+                </div>
+                <div class="footer">
+                    <div class="text-icon gold">0.5</div>
+                    <div class="text-icon weight">2</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="header">
+                    <div class="type">
+                        <div class="text-icon weapon">Simple Melee Weapon</div>
+                        <div class="text-icon versatile"></div>
+                        <div class="text-icon thrown"></div>
+                    </div>
+                    <div class="icon-list">
+                        <div class="text-icon action"></div>
+                    </div>
+                </div>
+                <div class="title">spear</div>
+                <div class="description">
+                    Long heavy stab stick. Can be used with one or two hands.<br/>
+                </div>
+                <div class="section fill">
+                    <div class="activity-group">
+                        <div class="group-header separator">
+                            <div class="group-name heading text-icon action">Actions</div>
+                        </div>
+                        <div class="section">
+                            <div class="name text-icon attack">one handed attack</div>
+                            <div class="description"></div>
+                            <div class="roll" data-roll-type="attack">
+                                <div class="die" data-die="d20"></div>
+                                <div class="mod" data-mod="str"></div>
+                                <div class="mod" data-mod="prof"></div>
+                            </div>
+                            <div class="roll" data-roll-type="damage">
+                                <div class="die" data-die="d6"></div>
+                                <div class="mod" data-mod="str"></div>
+                                <div class="text-icon piercing">Piercing</div>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <div class="name text-icon attack">two handed attack</div>
+                            <div class="description"></div>
+                            <div class="roll" data-roll-type="attack">
+                                <div class="die" data-die="d20"></div>
+                                <div class="mod" data-mod="str"></div>
+                                <div class="mod" data-mod="prof"></div>
+                            </div>
+                            <div class="roll" data-roll-type="damage">
+                                <div class="die" data-die="d8"></div>
+                                <div class="mod" data-mod="str"></div>
+                                <div class="text-icon piercing">Piercing</div>
+                            </div>
+                        </div>
+                        <div class="section">
+                            <div class="name text-icon attack">throw</div>
+                            <div class="description"></div>
+                            <div class="roll" data-roll-type="attack">
+                                <div class="die" data-die="d20"></div>
+                                <div class="mod" data-mod="dex"></div>
+                                <div class="mod" data-mod="prof"></div>
+                            </div>
+                            <div class="roll" data-roll-type="damage">
+                                <div class="die" data-die="d6"></div>
+                                <div class="mod" data-mod="dex"></div>
+                                <div class="text-icon piercing">Piercing</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="notes">
+                    <div class="text-icon versatile">versatile</div>
+                    <div class="text-icon thrown">thrown</div>
+                </div>
+                <div class="footer">
+                    <div class="text-icon gold">1</div>
+                    <div class="text-icon weight">3</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="header">
+                    <div class="type">
+                        <div class="text-icon ranged">Simple Ranged Weapon</div>
+                        <div class="text-icon two-handed"></div>
+                        <div class="text-icon loading"></div>
+                        <div class="text-icon ammunition"></div>
+                    </div>
+                    <div class="icon-list">
+                        <div class="text-icon action"></div>
+                    </div>
+                </div>
+                <div class="title">light crossbow</div>
+                <div class="description">
+                    Two-handed spring loaded bolt shooter.
+                    Can only be fired once per turn as it needs reloaded between shots.
+                </div>
+                <div class="section fill">
+                    <div class="activity-group">
+                        <div class="group-header separator">
+                            <div class="group-name heading text-icon action">Actions</div>
+                        </div>
+                        <div class="section">
+                            <div class="name text-icon attack">ranged attack</div>
+                            <div class="description">Range 80/320</div>
+                            <div class="roll" data-roll-type="attack">
+                                <div class="die" data-die="d20"></div>
+                                <div class="mod" data-mod="dex"></div>
+                                <div class="mod" data-mod="prof"></div>
+                            </div>
+                            <div class="roll" data-roll-type="damage">
+                                <div class="die" data-die="d8"></div>
+                                <div class="mod" data-mod="dex"></div>
+                                <div class="text-icon piercing">Piercing</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="notes">
+                    <div class="text-icon two-handed">two-handed</div>
+                    <div class="text-icon loading">loading</div>
+                    <div class="text-icon ammunition">ammunition</div>
+                </div>
+                <div class="footer">
+                    <div class="text-icon gold">25</div>
+                    <div class="text-icon weight">5</div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="header">
+                    <div class="type">
+                        <div class="text-icon ranged">Simple Ranged Weapon</div>
+                        <div class="text-icon two-handed"></div>
+                        <div class="text-icon ammunition"></div>
+                    </div>
+                    <div class="icon-list">
+                        <div class="text-icon action"></div>
+                    </div>
+                </div>
+                <div class="title">shortbow</div>
+                <div class="description">
+                    Small but effective bow for precise arrow delivery.
+                </div>
+                <div class="section fill">
+                    <div class="activity-group">
+                        <div class="group-header separator">
+                            <div class="group-name heading text-icon action">Actions</div>
+                        </div>
+                        <div class="section">
+                            <div class="name text-icon attack">ranged attack</div>
+                            <div class="description">Range 80/320</div>
+                            <div class="roll" data-roll-type="attack">
+                                <div class="die" data-die="d20"></div>
+                                <div class="mod" data-mod="dex"></div>
+                                <div class="mod" data-mod="prof"></div>
+                            </div>
+                            <div class="roll" data-roll-type="damage">
+                                <div class="die" data-die="d6"></div>
+                                <div class="mod" data-mod="dex"></div>
+                                <div class="text-icon piercing">Piercing</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="notes">
+                    <div class="text-icon two-handed">two-handed</div>
+                    <div class="text-icon ammunition">ammunition</div>
+                </div>
+                <div class="footer">
+                    <div class="text-icon gold">25</div>
+                    <div class="text-icon weight">2</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+    </div>
+    <div class="print-area">
+        <div class="row">
+            <div class="card">
+                <div class="header">
+                    <div class="type">
+                        <div class="text-icon weapon">Simple Melee Weapon</div>
+                    </div>
+                    <div class="icon-list">
+                        <div class="text-icon action"></div>
+                    </div>
+                </div>
+                <div class="title">Shortsword</div>
+                <div class="description">
+                    Trusty old steel sword.<br/>
+                </div>
+                <div class="section fill">
+                    <div class="activity-group">
+                        <div class="group-header separator">
+                            <div class="group-name heading text-icon action">Actions</div>
+                        </div>
+                        <div class="section">
+                            <div class="name text-icon attack">Slash Attack</div>
+                            <div class="description"></div>
+                            <div class="roll" data-roll-type="attack">
+                                <div class="die" data-die="d20"></div>
+                                <div class="mod" data-mod="str"></div>
+                                <div class="mod" data-mod="prof"></div>
+                            </div>
+                            <div class="roll" data-roll-type="damage">
+                                <div class="die" data-die="d6"></div>
+                                <div class="mod" data-mod="str"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="text-icon gold">10</div>
+                    <div class="text-icon weight">12</div>
+                </div>
+            </div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+        <div class="row">
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+    </div>
+</body>
