@@ -1,5 +1,36 @@
 [
     {
+        "title": "unarmed strike",
+        "type": "unarmed",
+        "typeDescription": "Melee Attack",
+        "description": "you're never without a good punch, kick, or even a headbutt.",
+        "properties": [],
+        "cost": 0,
+        "weight": 0,
+        "actions": [{
+            "type": "attack",
+            "name": "strike",
+            "rolls": [
+                {
+                    "type": "attack",
+                    "parts": [
+                        {"die": 20},
+                        {"mod": "str"},
+                        {"mod": "prof"}
+                    ]
+                },
+                {
+                    "type": "damage",
+                    "parts": [
+                        {"flat": 1},
+                        {"mod": "str"},
+                        { "icon": "bludgeoning" }
+                    ]
+                }
+            ]
+        }]
+    },
+    {
         "title": "dagger",
         "type": "weapon",
         "typeDescription": "Simple melee Weapon",
@@ -10,7 +41,10 @@
             {
                 "type": "attack",
                 "name": "melee attack",
-                "description": "Choose either strength or dexterity, then use it for your attack and damage",
+                "range": {
+                    "short": 20,
+                    "long": 60
+                },
                 "rolls": [
                     {
                         "type": "attack",
@@ -29,10 +63,13 @@
                         ]
                     }
                 ]
-            },
+            }
+        ],
+        "bonusActions": [
             {
                 "type": "attack",
-                "name": "throw",
+                "name": "second attack",
+                "description": "Available if you attacked with a different light weapon as your action",
                 "range": {
                     "short": 20,
                     "long": 60
@@ -42,7 +79,7 @@
                         "type": "attack",
                         "parts": [
                             {"die": 20},
-                            {"mod": "dex"},
+                            {"mod": "finesse"},
                             {"mod": "prof"}
                         ]
                     },
@@ -50,7 +87,6 @@
                         "type": "damage",
                         "parts": [
                             {"die": 4},
-                            {"mod": "dex"},
                             { "icon": "piercing" }
                         ]
                     }
@@ -69,6 +105,10 @@
             {
                 "type": "attack",
                 "name": "melee attack",
+                "range": {
+                    "short": 30,
+                    "long": 120
+                },
                 "rolls": [
                     {
                         "type": "attack",
@@ -83,28 +123,6 @@
                         "parts": [
                             {"die": 6},
                             {"mod": "str"},
-                            { "icon": "piercing" }
-                        ]
-                    }
-                ]
-            },
-            {
-                "type": "attack",
-                "name": "throw",
-                "rolls": [
-                    {
-                        "type": "attack",
-                        "parts": [
-                            {"die": 20},
-                            {"mod": "dex"},
-                            {"mod": "prof"}
-                        ]
-                    },
-                    {
-                        "type": "damage",
-                        "parts": [
-                            {"die": 6},
-                            {"mod": "dex"},
                             { "icon": "piercing" }
                         ]
                     }
@@ -123,6 +141,10 @@
             {
                 "type": "attack",
                 "name": "one handed attack",
+                "range": {
+                    "short": 20,
+                    "long": 60
+                },
                 "rolls": [
                     {
                         "type": "attack",
@@ -145,7 +167,6 @@
             {
                 "type": "attack",
                 "name": "two handed attack",
-                "description": "must have two free hands",
                 "rolls": [
                     {
                         "type": "attack",
@@ -160,32 +181,6 @@
                         "parts": [
                             {"die": 8},
                             {"mod": "str"},
-                            { "icon": "piercing" }
-                        ]
-                    }
-                ]
-            },
-            {
-                "type": "attack",
-                "name": "throw",
-                "range": {
-                    "short": 20,
-                    "long": 60
-                },
-                "rolls": [
-                    {
-                        "type": "attack",
-                        "parts": [
-                            {"die": 20},
-                            {"mod": "dex"},
-                            {"mod": "prof"}
-                        ]
-                    },
-                    {
-                        "type": "damage",
-                        "parts": [
-                            {"die": 6},
-                            {"mod": "dex"},
                             { "icon": "piercing" }
                         ]
                     }
@@ -220,7 +215,7 @@
                     {
                         "type": "damage",
                         "parts": [
-                            {"die": 20},
+                            {"die": 8},
                             {"mod": "dex"},
                             {"icon": "piercing"}
                         ]
@@ -256,8 +251,8 @@
                     {
                         "type": "damage",
                         "parts": [
-                            {"die": 20},
-                            {"mod": "str"},
+                            {"die": 6},
+                            {"mod": "dex"},
                             {"icon": "piercing"}
                         ]
                     }
@@ -332,7 +327,6 @@
             {
                 "type": "attack",
                 "name": "heavy two handed attack",
-                "description": "Small or tiny creatures have disadvantage",
                 "rolls": [
                     {
                         "type": "attack",
@@ -366,7 +360,6 @@
             {
                 "type": "attack",
                 "name": "heavy two handed attack",
-                "description": "Small or tiny creatures have disadvantage",
                 "rolls": [
                     {
                         "type": "attack",
@@ -455,7 +448,6 @@
             {
                 "type": "attack",
                 "name": "ranged attack",
-                "description": "Small or tiny creatures have disadvantage",
                 "range": {
                     "short": 100,
                     "long": 400
@@ -492,7 +484,6 @@
             {
                 "type": "attack",
                 "name": "ranged attack",
-                "description": "Small or tiny creatures have disadvantage",
                 "range": {
                     "short": 150,
                     "long": 600

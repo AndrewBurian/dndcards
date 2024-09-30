@@ -4,7 +4,8 @@
 }
 
 :root {
-    --header-size: 0.6em;
+    --header-size: 0.5em;
+    --title-size: 1.5em;
     --fade-prose: 0.8;
 }
 
@@ -67,50 +68,21 @@ div {
     gap: 0.25ch;
 }
 
-.title {
-    text-align: center;
-    font-size: 1.8em;
-    text-transform: capitalize;
-    margin-bottom: 2mm;
-}
 
-.heading {
-    font-size: 1.2em;
-    text-transform: capitalize;
-}
-
-.name {
-    font-size: 1em;
-    margin-bottom: 1mm;
-    text-transform: capitalize;
-    margin-top: 1.5mm;
-}
-
-.separator {
-    border-bottom: 1px solid darkgray;
-    /* margin-bottom: 1.5mm; */
-}
-
-.description {
-    text-align: left;
-    font-size: 0.6em;
-    margin-bottom: 2mm;
-    opacity: var(--fade-prose);
-}
-
-.description:empty {
-    display: none;
-}
 
 .text-icon {
     display: inline-flex;
     align-items: center;
+    text-transform: lowercase;
     gap: 0.25ch;
     &.action {
         --icon: url('./icons/play-circle.svg');
     }
     &.attack {
         --icon: url('./icons/sword-cross.svg');
+    }
+    &.unarmed {
+        --icon: url('./icons/boxing.svg');
     }
     &.weight {
         --icon: url('./icons/weight.svg');
@@ -149,13 +121,16 @@ div {
         --icon: url('./icons/knife.svg');
     }
     &.heavy {
-        --icon: url('./icons/dumbell.svg');
+        --icon: url('./icons/kettlebell.svg');
     }
     &.finesse {
         --icon: url('./icons/fencing.svg');
     }
     &.light {
         --icon: url('./icons/feather.svg');
+    }
+    &.bludgeoning {
+        --icon: url('./icons/hammer.svg');
     }
 }
 .text-icon::after {
@@ -166,6 +141,42 @@ div {
     width: 1.1em;
     height: 1.1em;
     display: inline-block;
+}
+
+.title {
+    text-align: center;
+    font-size: var(--title-size);
+    text-transform: capitalize;
+    margin-bottom: 2mm;
+}
+
+.heading {
+    font-size: 1.1em;
+    text-transform: capitalize;
+}
+
+.name {
+    font-size: 0.8em;
+    margin-bottom: 1mm;
+    text-transform: capitalize;
+    margin-top: 1.5mm;
+}
+
+.separator {
+    border-bottom: 1px solid darkgray;
+    /* margin-bottom: 1.5mm; */
+}
+
+.description {
+    text-align: left;
+    font-size: 0.5em;
+    margin-bottom: 1mm;
+    opacity: var(--fade-prose);
+    text-transform: lowercase;
+}
+
+.description:empty {
+    display: none;
 }
 
 .section {
@@ -191,7 +202,7 @@ div {
 .roll {
     padding-left: 1em;
     padding-bottom: 1mm;
-    font-size: 0.7em;
+    font-size: 0.5em;
     display: inline-flex;
     align-items: center;
     gap: 1ch;

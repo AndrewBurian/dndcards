@@ -13,27 +13,59 @@
     <div class="title">{{title}}</div>
     <div class="description">
         {{description}}
+        {{#includes properties "versatile"}}can we weilded with one hand, or with two for increased damage. {{/includes}}
+        {{#includes properties "heavy"}}small or tiny creatures will struggle to weild it. {{/includes}}
     </div>
     <div class="section fill">
+        {{#*inline "activity"}}
+        
+        <div class="section">
+            <div class="name text-icon {{this.type}}">{{this.name}}</div>
+            <div class="description">{{~#if description}}{{description}}<br/>{{/if}}
+                {{~#includes properties "finesse"}}choose str or dex to use for both the attack and damage roll. {{/includes}}
+                {{~#includes properties "heavy"}}{{#eq this.type 'attack'}}small or tiny creatures have disadvantage. {{/eq}}{{/includes}}
+                {{~#includes properties "thrown"}}can also be thrown. {{/includes}}
+                {{~#if range}}range {{range.short}}/{{range.long}}{{/if}}</div>
+            {{#each rolls}}
+            <div class="roll" data-roll-type="{{this.type}}">
+                {{#each parts}}
+                {{#if this.flat}}{{this.flat}}{{/if}}
+                {{#if this.die}}<div class="die" data-die="d{{this.die}}"></div>{{/if}}
+                {{#if this.mod}}<div class="mod" data-mod="{{this.mod}}"></div>{{/if}}
+                {{#if this.icon}}<div class="text-icon {{this.icon}}">{{this.icon}}</div>{{/if}}
+                {{/each}}
+            </div>
+            {{/each}}
+        </div>
+            
+        {{/inline}}
         {{#if actions}}
         <div class="activity-group">
             <div class="group-header separator">
                 <div class="group-name heading text-icon action">Actions</div>
             </div>
             {{#each actions}}
-            <div class="section">
-                <div class="name text-icon {{this.type}}">{{this.name}}</div>
-                <div class="description">{{#if range}}Range {{range.short}}/{{range.long}}{{#if description}}<br/>{{/if}}{{/if}}{{#if description}}{{description}}{{/if}}</div>
-                {{#each rolls}}
-                <div class="roll" data-roll-type="{{this.type}}">
-                    {{#each parts}}
-                    {{#if this.die}}<div class="die" data-die="d{{this.die}}"></div>{{/if}}
-                    {{#if this.mod}}<div class="mod" data-mod="{{this.mod}}"></div>{{/if}}
-                    {{#if this.icon}}<div class="text-icon {{this.icon}}">{{this.icon}}</div>{{/if}}
-                    {{/each}}
-                </div>
-                {{/each}}
+            {{> activity this properties=../properties}}
+            {{/each}}
+        </div>
+        {{/if}}
+        {{#if bonusActions}}
+        <div class="activity-group">
+            <div class="group-header separator">
+                <div class="group-name heading text-icon bonus">Bonus Actions</div>
             </div>
+            {{#each bonusActions}}
+            {{> activity this}}
+            {{/each}}
+        </div>
+        {{/if}}
+        {{#if reactions}}
+        <div class="activity-group">
+            <div class="group-header separator">
+                <div class="group-name heading text-icon reaction">Reactions</div>
+            </div>
+            {{#each reactions}}
+            {{> activity this}}
             {{/each}}
         </div>
         {{/if}}
